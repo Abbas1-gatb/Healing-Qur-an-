@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qur'anic Inspiration</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url('https://images.unsplash.com/photo-1614523695450-a0b4b20eebc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            background-blend-mode: darken;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .quote-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-width: 700px;
+        }
+        .arabic {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            direction: rtl;
+        }
+        .english {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .reference {
+            font-size: 18px;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-box" id="quoteBox">
+        <!-- Quote will be inserted here by JS -->
+    </div>
+
+    <script>
+        const quotes = [
+            {
+                arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+                english: "Indeed, with hardship [will be] ease.",
+                reference: "Surah Ash-Sharh (94:6)"
+            },
+            {
+                arabic: "وَعَسَىٰ أَن تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَّكُمْ",
+                english: "But perhaps you hate a thing and it is good for you.",
+                reference: "Surah Al-Baqarah (2:216)"
+            },
+            {
+                arabic: "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+                english: "Indeed, Allah is with the patient.",
+                reference: "Surah Al-Baqarah (2:153)"
+            },
+            {
+                arabic: "وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا",
+                english: "And whoever fears Allah – He will make for him a way out.",
+                reference: "Surah At-Talaq (65:2)"
+            },
+            {
+                arabic: "اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ",
+                english: "Allah is the Light of the heavens and the earth.",
+                reference: "Surah An-Nur (24:35)"
+            }
+        ];
+
+        const quote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById("quoteBox").innerHTML = `
+            <div class="arabic">${quote.arabic}</div>
+            <div class="english">"${quote.english}"</div>
+            <div class="reference">– ${quote.reference}</div>
+        `;
+    </script>
+</body>
+</html>
